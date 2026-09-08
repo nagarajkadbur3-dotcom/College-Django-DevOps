@@ -18,7 +18,8 @@ spec:
 
     spec:
       containers:
-        - name: college-django
-          image: college-django:9
-          ports:
-            - containerPort: 8000
+  - name: college-django
+    image: college-django:9
+    imagePullPolicy: Never
+    ports:
+      - containerPort: 8000
