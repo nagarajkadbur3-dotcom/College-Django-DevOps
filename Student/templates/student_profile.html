@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6f8;
+            margin: 0;
+        }
+
+
+        .navbar {
+            background: #1677ff;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .navbar h2 {
+            margin: 0;
+        }
+
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+
+        .profile-container {
+            width: 700px;
+            max-width: 90%;
+            margin: 50px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+
+        .profile-title {
+            background: #1677ff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        .profile-title h1 {
+            margin: 0;
+        }
+
+
+        .profile-body {
+            padding: 30px;
+        }
+
+
+        .row {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+
+        .label {
+            width: 40%;
+            font-weight: bold;
+            color: #555;
+        }
+
+
+        .value {
+            width: 60%;
+            color: #222;
+        }
+
+
+        .logout {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+
+        .logout:hover {
+            background: #bb2d3b;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="navbar">
+
+        <h2>Techno Soft</h2>
+
+        <div>
+
+            <a href="{% url 'index' %}">
+                Home
+            </a>
+
+            <a href="{% url 'logout' %}">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-container">
+
+
+        <div class="profile-title">
+
+            <h1>
+                Student Details
+            </h1>
+
+        </div>
+
+
+        <div class="profile-body">
+
+
+            <div class="row">
+
+                <div class="label">
+                    Student Name
+                </div>
+
+                <div class="value">
+                    {{ student.student_name }}
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="label">
+                    Email Address
+                </div>
+
+                <div class="value">
+                    {{ student.email }}
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="label">
+                    Phone Number
+                </div>
+
+                <div class="value">
+                    {{ student.phone }}
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="label">
+                    Date of Birth
+                </div>
+
+                <div class="value">
+                    {{ student.date_of_birth }}
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="label">
+                    Gender
+                </div>
+
+                <div class="value">
+                    {{ student.gender }}
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="label">
+                    Course
+                </div>
+
+                <div class="value">
+                    {{ student.course }}
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="label">
+                    Address
+                </div>
+
+                <div class="value">
+                    {{ student.address }}
+                </div>
+
+            </div>
+
+
+            <a
+                href="{% url 'index' %}"
+                class="logout"
+            >
+               Go Back
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
