@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: college-django
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: college-django
+
+  template:
+    metadata:
+      labels:
+        app: college-django
+
+    spec:
+      containers:
+        - name: college-django
+          image: college-django:latest
+          ports:
+            - containerPort: 8000
